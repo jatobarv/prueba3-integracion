@@ -2,7 +2,7 @@ from django.db import models
 import datetime
 
 
-class Paciente(models.Model):
+class paciente(models.Model):
     rut_paciente = models.CharField(max_length=12)
     nombres = models.CharField(max_length=20)
     apellido_pat = models.CharField(max_length=10)

@@ -13,14 +13,16 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Paciente',
+            name='paciente',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('rut_paciente', models.CharField(max_length=12)),
                 ('nombres', models.CharField(max_length=20)),
                 ('apellido_pat', models.CharField(max_length=10)),
                 ('apellido_mat', models.CharField(max_length=10)),
-                ('fecha_nac', models.DateTimeField(default=django.utils.timezone.now)),
+                ('fecha_nac', models.DateTimeField(
+                    default=django.utils.timezone.now)),
                 ('ocupacion', models.CharField(max_length=10)),
                 ('estado_civil', models.CharField(max_length=10)),
                 ('direccion', models.CharField(max_length=30)),

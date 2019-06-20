@@ -14,6 +14,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='paciente',
             name='fecha_nac',
-            field=models.DateTimeField(default=datetime.datetime(2019, 6, 20, 13, 10, 10, 407044)),
+            field=models.DateTimeField(default=datetime.datetime(
+                2019, 6, 20, 13, 10, 10, 407044)),
         ),
     ]
