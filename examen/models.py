@@ -16,3 +16,19 @@ class paciente(models.Model):
 
     def __str__(self):
         return self.nombres
+
+class examenes(models.Model):
+    codiexamen = models.AutoField(primary_key=True)
+    descripcion = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.descripcion
+
+class agenda(models.Model):
+    rut_paciente = models.ForeignKey('paciente', on_delete=models.CASCADE)
+    codiexamen = models.ForeignKey('examenes', on_delete=models.CASCADE)
+    fecha = models.DateField(default=datetime.datetime.now())
+    hora = models.TimeField(auto_now=False)
+
+    def __str__(self):
+        return str(self.fecha)
