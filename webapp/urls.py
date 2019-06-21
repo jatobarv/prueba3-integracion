@@ -24,6 +24,8 @@ from examen.views import paciente_view, examenes_view, agenda_view
 
 router = routers.DefaultRouter()
 router.register('paciente', views.listapaciente)
+router.register('examenes', views.listaexamenes)
+router.register('agenda', views.listaagenda)
 
 urlpatterns = [
     path('api/', include(router.urls)),

@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import paciente, examenes, agenda
 from .forms import pacienteForm, agendaForm, examenesForm
-from .serializers import pacienteSerializer
+from .serializers import pacienteSerializer, examenesSerializer, agendaSerializer
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
@@ -15,13 +15,13 @@ class listapaciente(viewsets.ModelViewSet):
     queryset = paciente.objects.all()
     serializer_class = pacienteSerializer
 
-    #  def get(self, request):
-    #     paciente1 = paciente.objects.all()
-    #     serializer = pacienteSerializer(paciente1, many=True)
-    #     return Response(serializer.data)
+class listaexamenes(viewsets.ModelViewSet):
+    queryset = examenes.objects.all()
+    serializer_class = examenesSerializer
 
-    # def post(self):
-    #     pass
+class listaagenda(viewsets.ModelViewSet):
+    queryset = agenda.objects.all()
+    serializer_class = agendaSerializer
 
 class SignUp(generic.CreateView):
     form_class = UserCreationForm
