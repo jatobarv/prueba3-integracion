@@ -1,0 +1,23 @@
+{% extends 'registration/base.html' %}
+
+{% block title %}Detalle paciente{% endblock %}
+
+{% block content %}
+
+{% for obj in pac %}
+<ul class="list-group">
+    <li class="list-group-item active">Paciente {{ obj.id }}</li>
+    <li class="list-group-item"><strong>Rut</strong>: {{ obj.rut_paciente }}</li>
+    <li class="list-group-item"><strong>Nombres</strong>: {{ obj.nombres }}</li>
+    <li class="list-group-item"><strong>Apellido materno</strong>: {{ obj.apellido_mat }}</li>
+    <li class="list-group-item"><strong>Apellido paterno</strong>: {{ obj.apellido_pat }}</li>
+    <li class="list-group-item"><strong>Fecha de nacimiento</strong>: {{ obj.fecha_nac }}</li>
+    <li class="list-group-item"><strong>Ocupación</strong>: {{ obj.ocupacion }}</li>
+    <li class="list-group-item"><strong>Estado civil</strong>: {{ obj.estado_civil }}</li>
+    <li class="list-group-item"><strong>Dirección</strong>: {{ obj.direccion }}</li>
+    <li class="list-group-item"><strong>Telefono</strong>: {{ obj.telefono }}</li>
+    <li class="list-group-item"><strong>Prevision</strong>: {{ obj.prevision }}</li>
+</ul>
+{% endfor %}
+
+{% endblock %}

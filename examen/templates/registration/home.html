@@ -6,6 +6,12 @@
 {% if user.is_authenticated %}
 Hola {{ user.username }}!
 <p><a href="{% url 'logout' %}">Salir</a></p>
+<p><a href="{% url 'crearpaciente' %}">Crear paciente</a></p>
+<p><a href="{% url 'crearexamen' %}">Crear examen</a></p>
+<p><a href="{% url 'agendar' %}">Agendar examen</a></p>
+{% for pac in pacienteForm %}
+<li>{{ pac.nombres }}</li>
+{% endfor %}
 {% else %}
 <p>No haz iniciado sesión</p>
 <a href="{% url 'login' %}">Iniciar sesión</a>

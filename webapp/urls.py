@@ -18,8 +18,8 @@ from django.urls import path, include
 from rest_framework.urlpatterns import format_suffix_patterns
 from examen import views
 from rest_framework import routers
-from django.views.generic.base import TemplateView 
-from examen.views import paciente_view, examenes_view, agenda_view
+from django.views.generic.base import TemplateView
+from examen.views import paciente_view, examenes_view, agenda_view, listapaciente, detalle_paciente
 
 
 router = routers.DefaultRouter()
@@ -32,9 +32,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('examen.urls')),
-    path('crearpaciente/', paciente_view),
-    path('crearexamen/', examenes_view),
-    path('agendar/', agenda_view),
+    path('crearpaciente/', paciente_view, name='crearpaciente'),
+    path('crearexamen/', examenes_view, name='crearexamen'),
+    path('agendar/', agenda_view, name='agendar'),
+    path('paciente/', detalle_paciente, name='paciente'),
+
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     # path('paciente/', views.listapaciente.as_view()),
 
