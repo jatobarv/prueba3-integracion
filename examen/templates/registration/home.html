@@ -7,6 +7,7 @@
 Hola {{ user.username }}!
 <p><a href="{% url 'logout' %}">Salir</a></p>
 <p><a href="{% url 'crearpaciente' %}">Crear paciente</a></p>
+<p><a href="{% url 'paciente' %}">Ver paciente</a></p>
 <p><a href="{% url 'crearexamen' %}">Crear examen</a></p>
 <p><a href="{% url 'agendar' %}">Agendar examen</a></p>
 {% for pac in pacienteForm %}
