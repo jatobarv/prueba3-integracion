@@ -19,7 +19,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from examen import views
 from rest_framework import routers
 from django.views.generic.base import TemplateView
-from examen.views import paciente_view, examenes_view, agenda_view, listapaciente, detalle_paciente
+from examen.views import paciente_view, examenes_view, agenda_view, listapaciente, detalle_paciente, detalle_producto
 
 
 router = routers.DefaultRouter()
@@ -36,7 +36,7 @@ urlpatterns = [
     path('crearproducto/', examenes_view, name='crearproducto'),
     path('servicio/', agenda_view, name='servicio'),
     path('usuario/', detalle_paciente, name='usuario'),
-
+    path('producto/', detalle_producto, name='producto'),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     # path('paciente/', views.listapaciente.as_view()),
 

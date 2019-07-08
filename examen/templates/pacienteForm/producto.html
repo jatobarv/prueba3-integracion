@@ -1,0 +1,19 @@
+{% extends 'registration/base.html' %}
+
+{% block title %}Detalle producto{% endblock %}
+
+{% block content %}
+
+{% for obj in prod %}
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item active">Producto {{ obj.id }}</li>
+        <li class="list-group-item"><strong>Descripcion</strong>: {{ obj.descripcion }}</li>
+        <li class="list-group-item"><strong>Precio</strong>: {{ obj.precio }}</li>
+        <li class="list-group-item"><strong>Stock</strong>: {{ obj.stock }}</li>
+
+    </ul>
+</div>
+{% endfor %}
+
+{% endblock %}

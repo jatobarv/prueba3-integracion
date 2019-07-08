@@ -10,6 +10,8 @@ Hola {{ user.username }}!
 <p><a href="{% url 'usuario' %}">Ver usuarios</a></p>
 <p><a href="{% url 'crearproducto' %}">Crear producto</a></p>
 <p><a href="{% url 'servicio' %}">Agendar servicio</a></p>
+<p><a href="{% url 'producto' %}">Ver productos</a></p>
+
 {% for pac in pacienteForm %}
 <li>{{ pac.nombres }}</li>
 {% endfor %}

@@ -19,7 +19,9 @@ class usuario(models.Model):
 class producto(models.Model):
     idproducto = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=50)
-
+    precio = models.DecimalField(default=10000,max_digits=10, decimal_places=0)
+    stock = models.PositiveIntegerField(default=1)
+    
     def __str__(self):
         return self.descripcion
 

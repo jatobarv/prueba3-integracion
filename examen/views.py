@@ -73,3 +73,10 @@ def detalle_paciente(request):
     pac = usuario.objects.all()
     context = {'pac': pac}
     return render(request, 'pacienteForm/usuario.html', context)
+
+def detalle_producto(request):
+    prod = producto.objects.all()
+    context = {'prod': prod}
+    return render(request, 'pacienteForm/producto.html', context)
+
+
