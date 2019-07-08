@@ -6,10 +6,10 @@
 {% if user.is_authenticated %}
 Hola {{ user.username }}!
 <p><a href="{% url 'logout' %}">Salir</a></p>
-<p><a href="{% url 'crearpaciente' %}">Crear paciente</a></p>
-<p><a href="{% url 'paciente' %}">Ver paciente</a></p>
-<p><a href="{% url 'crearexamen' %}">Crear examen</a></p>
-<p><a href="{% url 'agendar' %}">Agendar examen</a></p>
+<p><a href="{% url 'crearusuario' %}">Crear usuario</a></p>
+<p><a href="{% url 'usuario' %}">Ver usuarios</a></p>
+<p><a href="{% url 'crearproducto' %}">Crear producto</a></p>
+<p><a href="{% url 'servicio' %}">Agendar servicio</a></p>
 {% for pac in pacienteForm %}
 <li>{{ pac.nombres }}</li>
 {% endfor %}

@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
-from .models import paciente, examenes, agenda
+from .models import usuario, producto, servicio
 from .forms import pacienteForm, agendaForm, examenesForm
 from .serializers import pacienteSerializer, examenesSerializer, agendaSerializer
 from django.contrib.auth.forms import UserCreationForm
@@ -13,17 +13,17 @@ from django.views import generic
 
 
 class listapaciente(viewsets.ModelViewSet):
-    queryset = paciente.objects.all()
+    queryset = usuario.objects.all()
     serializer_class = pacienteSerializer
 
 
 class listaexamenes(viewsets.ModelViewSet):
-    queryset = examenes.objects.all()
+    queryset = producto.objects.all()
     serializer_class = examenesSerializer
 
 
 class listaagenda(viewsets.ModelViewSet):
-    queryset = agenda.objects.all()
+    queryset = servicio.objects.all()
     serializer_class = agendaSerializer
 
 
@@ -42,7 +42,7 @@ def paciente_view(request):
     context = {
         'form': form
     }
-    return render(request, "pacienteForm/paciente_form.html", context)
+    return render(request, "pacienteForm/usuario_form.html", context)
 
 
 def examenes_view(request):
@@ -54,7 +54,7 @@ def examenes_view(request):
     context = {
         'form': form
     }
-    return render(request, "pacienteForm/examen_form.html", context)
+    return render(request, "pacienteForm/producto_form.html", context)
 
 
 def agenda_view(request):
@@ -66,10 +66,10 @@ def agenda_view(request):
     context = {
         'form': form
     }
-    return render(request, "pacienteForm/agenda_form.html", context)
+    return render(request, "pacienteForm/servicio_form.html", context)
 
 
 def detalle_paciente(request):
-    pac = paciente.objects.all()
+    pac = usuario.objects.all()
     context = {'pac': pac}
-    return render(request, 'pacienteForm/paciente.html', context)
+    return render(request, 'pacienteForm/usuario.html', context)

@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
-{% block title %}Agendar examen{% endblock %}
+{% block title %}Agendar servicio{% endblock %}
 
 {% block content %}
 <form method="post">
     {% csrf_token %}
     <div class="container m-3">
-        <h2>Agendar examen</h2>
+        <h2>Agendar servicio</h2>
         {{ form|crispy }}
         <input type="submit"></input>
     </div>

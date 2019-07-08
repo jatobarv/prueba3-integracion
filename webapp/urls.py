@@ -23,19 +23,19 @@ from examen.views import paciente_view, examenes_view, agenda_view, listapacient
 
 
 router = routers.DefaultRouter()
-router.register('paciente', views.listapaciente)
-router.register('examenes', views.listaexamenes)
-router.register('agenda', views.listaagenda)
+router.register('usuario', views.listapaciente)
+router.register('producto', views.listaexamenes)
+router.register('servicio', views.listaagenda)
 
 urlpatterns = [
     path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('examen.urls')),
-    path('crearpaciente/', paciente_view, name='crearpaciente'),
-    path('crearexamen/', examenes_view, name='crearexamen'),
-    path('agendar/', agenda_view, name='agendar'),
-    path('paciente/', detalle_paciente, name='paciente'),
+    path('crearusuario/', paciente_view, name='crearusuario'),
+    path('crearproducto/', examenes_view, name='crearproducto'),
+    path('servicio/', agenda_view, name='servicio'),
+    path('usuario/', detalle_paciente, name='usuario'),
 
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     # path('paciente/', views.listapaciente.as_view()),
